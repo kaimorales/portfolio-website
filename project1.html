@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFL Quarterback Analysis | Projects | Kai Murakami Morales</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../claude-style.css">
+    <style>
+        /* Additional project page specific styles */
+        .project-header {
+            margin-bottom: var(--space-xl);
+        }
+        
+        .project-image {
+            margin: var(--space-xl) 0;
+            text-align: center;
+        }
+        
+        .project-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .project-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+        
+        .meta-item i {
+            color: var(--primary);
+        }
+        
+        .project-content {
+            margin-bottom: var(--space-xxl);
+        }
+        
+        .project-content h2 {
+            margin-top: var(--space-xl);
+            margin-bottom: var(--space-md);
+            font-size: 1.85rem;
+            color: var(--primary);
+        }
+        
+        .project-content h3 {
+            margin-top: var(--space-lg);
+            margin-bottom: var(--space-sm);
+            font-size: 1.5rem;
+        }
+        
+        .project-content ul, 
+        .project-content ol {
+            margin-bottom: var(--space-md);
+            padding-left: var(--space-lg);
+        }
+        
+        .project-content li {
+            margin-bottom: var(--space-xs);
+        }
+        
+        .code-block {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: var(--space-md);
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: var(--space-md) 0;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            white-space: pre;
+            tab-size: 4;
+        }
+        
+        body.light-theme .code-block {
+            background-color: rgba(0, 0, 0, 0.05);
+            color: var(--text-dark);
+        }
+        
+        .graph-explanation {
+            font-style: italic;
+            color: #888;
+            text-align: center;
+            margin-top: var(--space-xs);
+        }
+        
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: var(--space-xxl);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .nav-button {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            padding: var(--space-sm) var(--space-md);
+            border: 1px solid var(--border-dark);
+            border-radius: 4px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        body.light-theme .nav-button {
+            border-color: var(--border-light);
+        }
+        
+        .nav-button:hover {
+            background-color: rgba(218, 119, 86, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .back-to-projects {
+            text-align: center;
+            margin-top: var(--space-xl);
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="logo-home" aria-label="Home">
+        <img src="/assets/umi.png" alt="Home">
+    </a>
+    
+    <div class="theme-toggle">
+        <button aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <main class="content">
+        <div class="conversation">
+            <div class="message-container">
+                <div class="message-header">Project Details</div>
+                <div class="message">
+                    <div class="project-header">
+                        <h1 class="name">NFL Quarterback Performance Analysis</h1>
+                        <p class="subtitle">Statistical analysis of nullified interceptions in the NFL</p>
+                        
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <i class="far fa-calendar"></i>
+                                <span>Completed: September 2024</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-code-branch"></i>
+                                <span>Version: 1.2</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fab fa-github"></i>
+                                <a href="https://github.com/kaimorales/NullifedINT" target="_blank">GitHub Repository</a>
+                            </div>
+                        </div>
+                        
+                        <div class="tags">
+                            <span>R</span>
+                            <span>Python</span>
+                            <span>pandas</span>
+                            <span>scipy</span>
+                            <span>matplotlib</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-image">
+                        <img src="/assets/mohomie.png" alt="NFL Quarterback Analysis visualization showing distribution of nullified interceptions">
+                        <p class="graph-explanation">Distribution of nullified interceptions across NFL quarterbacks (2018-2023)</p>
+                    </div>
+                    
+                    <div class="project-content">
+                        <h2>The Hidden Side of NFL Statistics</h2>
+                        <p>As football fans, we're all familiar with the standard NFL statistics that dominate discussions every Monday morning - passing yards, touchdowns, and interceptions. But what about the plays that don't make it into the official record? What about those moments when a quarterback throws an interception, only to have it erased by a penalty flag?</p>
+                        
+                        <p>These "nullified interceptions" exist in a statistical shadow realm - they happened on the field but disappear from the record books. In this data analysis project, I decided to shine a light on this overlooked aspect of quarterback performance.</p>
+                        
+                        <h2>The Mahomes Mystery</h2>
+                        <p>The inspiration for this project came from watching Kansas City Chiefs games over the past few seasons. As a data scientist and football fan, I couldn't help but notice what seemed like an unusual pattern: Patrick Mahomes appeared to benefit from an uncommonly high number of nullified interceptions.</p>
+                        
+                        <p>Was this just confirmation bias on my part, or was there something statistically significant happening? To answer this question, I needed data - and lots of it.</p>
+                        
+                        <h2>Technologies & Tools</h2>
+                        <p>This project leverages several powerful data science technologies:</p>
+                        <ul>
+                            <li><strong>R with nflfastR and tidyverse:</strong> The core of the data collection process, allowing me to access comprehensive play-by-play NFL data without manual review</li>
+                            <li><strong>Python:</strong> Used for the statistical analysis and visualization components</li>
+                            <li><strong>pandas:</strong> For efficient data manipulation and analysis</li>
+                            <li><strong>scipy:</strong> For conducting statistical tests like the Mann-Whitney U Test</li>
+                            <li><strong>matplotlib:</strong> For creating visualizations of the findings</li>
+                            <li><strong>numpy:</strong> For numerical calculations and bootstrap resampling</li>
+                        </ul>
+                        
+                        <h2>Data Collection Process</h2>
+                        <p>The backbone of this project is the <code>nflfastR</code> package in R, which provides comprehensive play-by-play data for all NFL games. My data collection workflow included:</p>
+                        <ul>
+                            <li>Extracting play-by-play data for NFL seasons 2018-2023</li>
+                            <li>Programmatically identifying nullified interceptions by searching for play descriptions containing "INTERCEPTED" alongside penalty flags</li>
+                            <li>Algorithmically matching interceptions with starting quarterbacks when the passer information was incomplete</li>
+                            <li>Merging pass attempt data to normalize interception rates</li>
+                            <li>Outputting a cleaned dataset as <code>nullified_interceptions_with_attempts_2018_2023.csv</code></li>
+                        </ul>
+                        
+                        <p>Here's a glimpse at the R code I used to collect the data:</p>
+                        
+                        <div class="code-block"># Collect nullified interceptions (interceptions negated by penalties)
+nullified_ints <- pbp_data %>%
+  filter(str_detect(desc, "INTERCEPTED"), penalty == 1) %>%
+  select(season, game_id, week, posteam, defteam, passer_player_name, desc, penalty_team, penalty_type)</div>
+                        
+                        <h2>Analysis Techniques</h2>
+                        <p>After collecting the data, I analyzed it using Python to identify statistical outliers and differences in nullified interception rates. The analysis included:</p>
+                        <ul>
+                            <li><strong>Mann-Whitney U Test:</strong> A non-parametric test to check if Mahomes' nullified interception rate was statistically different from other quarterbacks</li>
+                            <li><strong>Bootstrapping:</strong> A resampling technique to estimate confidence intervals for nullified interception rates</li>
+                            <li><strong>Z-Score Analysis:</strong> To identify statistical outliers in the dataset</li>
+                            <li><strong>Data Visualization:</strong> To compare Mahomes' nullified interception rate against the distribution for other quarterbacks</li>
+                        </ul>
+                        
+                        <p>The Python analysis that led to these conclusions included:</p>
+                        
+                        <div class="code-block"># Perform Mann-Whitney U test (to check if Mahomes is statistically different)
+if len(mahomes_rate) > 0 and len(other_qbs_rate) > 0:
+    u_stat, p_value = stats.mannwhitneyu(mahomes_rate, other_qbs_rate, alternative="two-sided")
+else:
+    u_stat, p_value = np.nan, np.nan</div>
+                        
+                        <h2>Key Findings</h2>
+                        <p>The analysis revealed some fascinating insights. Most importantly, Patrick Mahomes stood out significantly from his peers. The statistical tests confirmed what my eyes had suspected:</p>
+                        <ul>
+                            <li>Mahomes had a Z-score of 4.80 for nullified interceptions</li>
+                            <li>This is well beyond the typical threshold of 3.0 for identifying statistical outliers</li>
+                            <li>The Mann-Whitney U Test confirmed the statistical significance (p-value < 0.001)</li>
+                            <li>Bootstrap resampling demonstrated the robustness of these findings</li>
+                        </ul>
+                        
+                        <div class="project-image">
+                            <img src="../assets/projects/nfl-analysis-boxplot.png" alt="Box plot showing the distribution of nullified interceptions with Mahomes as an outlier">
+                            <p class="graph-explanation">Box plot visualizing Mahomes as a statistical outlier</p>
+                        </div>
+                        
+                        <h2>What This Means for How We Evaluate Quarterbacks</h2>
+                        <p>These findings have significant implications for how we evaluate quarterback performance in the NFL. Standard interception statistics only tell part of the story. When a quarterback consistently benefits from nullified interceptions:</p>
+                        <ul>
+                            <li>Their interception statistics appear better than their actual on-field decision-making</li>
+                            <li>The team's offensive performance might be artificially boosted</li>
+                            <li>Risk-taking behavior is effectively rewarded without the statistical penalty</li>
+                        </ul>
+                        
+                        <p>This doesn't necessarily mean there's anything nefarious happening - it could be a result of offensive line play, penalty tendencies, or even coaching strategies. What it does mean is that the traditional box score doesn't capture the full picture.</p>
+                        
+                        <h2>Implementation Details</h2>
+                        <p>The project structure consists of two main components:</p>
+                        <ul>
+                            <li><strong>get_nullified_interceptions.R:</strong> An R script that collects and processes the NFL play-by-play data using nflfastR</li>
+                            <li><strong>analyze_nullified_interceptions.py:</strong> A Python script that performs the statistical analysis</li>
+                        </ul>
+                        
+                        <p>Here's an example of how I calculated Z-scores to identify outliers:</p>
+
+                        <div class="code-block"># Calculate Z-scores for nullified interceptions
+mean_nullified = df['nullified_int'].mean()
+std_nullified = df['nullified_int'].std()
+
+df['z_score'] = (df['nullified_int'] - mean_nullified) / std_nullified
+
+# Identify outliers
+outliers = df[df['z_score'].abs() > 3.0]
+print(f"Quarterbacks with Z-scores beyond ±3.0 (statistical outliers):")
+print(outliers[['player_name', 'nullified_int', 'z_score']])</div>
+                        
+                        <h2>Challenges and Solutions</h2>
+                        <p>During this project, I encountered several challenges:</p>
+                        <ul>
+                            <li><strong>Data Integration:</strong> Combining the play-by-play data with quarterback information required careful matching algorithms</li>
+                            <li><strong>Sample Size Concerns:</strong> To address potential sample size issues, I implemented bootstrap resampling techniques</li>
+                            <li><strong>Controlling for Variables:</strong> I needed to account for factors like total passing attempts and offensive style when analyzing the data</li>
+                        </ul>
+                        
+                        <h2>Future Work</h2>
+                        <p>This project could be extended in several ways:</p>
+                        <ul>
+                            <li>Expanding analysis to include the impact of nullified interceptions on game outcomes</li>
+                            <li>Comparing nullified interception rates across different eras of the NFL</li>
+                            <li>Refining methods to distinguish intentional penalties versus incidental fouls leading to nullified interceptions</li>
+                            <li>Investigating the types of penalties that lead to nullified interceptions</li>
+                            <li>Analyzing game situations (score, down, distance) when nullified interceptions occur</li>
+                            <li>Developing a predictive model for nullified interceptions based on quarterback style and team factors</li>
+                        </ul>
+                        
+                        <h2>How to Use This Project</h2>
+                        <p>If you're interested in reproducing or building on this analysis, the process is straightforward:</p>
+                        <ol>
+                            <li>Run <code>get_nullified_interceptions.R</code> in R to generate the dataset (requires nflfastR and tidyverse packages)</li>
+                            <li>Run <code>analyze_nullified_interceptions.py</code> in Python to analyze the data and visualize results (requires pandas, numpy, scipy, and matplotlib)</li>
+                        </ol>
+                        
+                        <h2>Conclusion</h2>
+                        <p>This analysis provides statistical evidence that Patrick Mahomes benefits from an unusually high number of nullified interceptions. The findings suggest that standard interception statistics may not fully capture quarterback performance and risk-taking behavior.</p>
+                        
+                        <p>The next time you watch an NFL game and see an interception wiped away by a penalty flag, remember - that play might not count in the official statistics, but it still tells us something important about quarterback performance. And in Patrick Mahomes' case, it tells us quite a lot.</p>
+                    </div>
+                    
+                    <div class="navigation-buttons">
+                        <a href="portfolio.html" class="nav-button">
+                            <i class="fas fa-arrow-left"></i>
+                            Previous Project
+                        </a>
+                        <a href="project2.html" class="nav-button">
+                            Next Project
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="back-to-projects">
+                        <a href="index.html" class="nav-button">Back to Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2025 Kai Murakami Morales</p>
+        </footer>
+    </main>
+
+    <script src="../claude-script.js"></script>
+</body>
+</html>

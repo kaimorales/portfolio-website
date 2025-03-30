@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommendations | Kai Murakami Morales</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../claude-style.css">
+</head>
+<style>
+    .navigation-buttons {
+          display: flex;
+          justify-content: space-between;
+          margin-top: var(--space-xxl);
+          margin-bottom: var(--space-xl);
+      }
+      
+      .nav-button {
+          display: inline-flex;
+          align-items: center;
+          gap: var(--space-xs);
+          padding: var(--space-sm) var(--space-md);
+          border: 1px solid var(--border-dark);
+          border-radius: 4px;
+          transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+      
+      body.light-theme .nav-button {
+          border-color: var(--border-light);
+      }
+      
+      .nav-button:hover {
+          background-color: rgba(218, 119, 86, 0.1);
+          transform: translateY(-2px);
+      }
+</style>
+<body>
+    <a href="index.html" class="logo-home" aria-label="Home">
+        <img src="assets/umi.png" alt="Home">
+    </a>
+    <div class="theme-toggle">
+        <button aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <main class="content">
+        <div class="profile">
+            <div class="profile-image">
+                <img src="../assets/pfp.png" alt="Kai Murakami Morales">
+            </div>
+            <h1 class="name">Kai Murakami Morales</h1>
+            <p class="subtitle">Data Science Student</p>
+            <div class="social-links">
+                <a href="https://github.com/kaimorales" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/kaimorales" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://kmurakami.myportfolio.com" aria-label="Photography">
+                    <i class="fas fa-camera"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="conversation">
+            <div class="message-container">
+                <div class="message-header">Fiction Book Recommendations</div>
+                <div class="message">
+                    <ul class="book-list">
+                        <li>
+                            <div class="book-cover">
+                                <img src="assets/stoner.jpg" alt="Book 1">
+                            </div>
+                            <div class="book-details">
+                                <h3>Stoner</h3>
+                                <p class="author">John Williams</p>
+                                <p>"Stoner" by John Williams was one of the first novels I ever read, and it is still my favorite. The writing is absolutely beautiful, drawing me into a peaceful, almost familiar setting. I was captivated by the complex character dynamics, especially the exploration of relationship abuse through the stoic lens of Stoner. His quiet discovery of love, both for literature and in his personal relationships, was deeply inspiring to me. The tender relationship with his daughter moved me, and this book played a huge role in making me fall in love with fiction.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="book-cover">
+                                <img src="assets/phm.jpg" alt="Book 2">
+                            </div>
+                            <div class="book-details">
+                                <h3>Project Hail Mary</h3>
+                                <p class="author">Andy Weir</p>
+                                <p>"Project Hail Mary" was my first science fiction book, and I was completely surprised by how immersed I became in the story. Andy Weir did an incredible job making it feel like a movie I was watching. Every time I stopped reading, I couldn't wait to start again. The characters were fantastic, and the entire book was a rollercoaster ride. The story made me realize how much I still have to learn about the natural world—especially in physics and chemistry. It also deepened my appreciation for mathematics as the language of our universe and left me with a sense of moral responsibility to better understand it.</p>
+                            </li>
+                        <li>
+                            <div class="book-cover">
+                                <img src="assets/gor.jpg" alt="Book 3">
+                            </div>
+                            <div class="book-details">
+                                <h3>The Grapes of Wrath</h3>
+                                <p class="author">John Steinbeck</p>
+                                <p>"The Grapes of Wrath" plunged me into the immersive desperation of the Dust Bowl era as Steinbeck made me feel like a member of the Joad family traveling west in their overloaded truck. His meticulous attention to detail—from the grit of Oklahoma dust to the haunting emptiness of an empty stomach—created such a vivid experience that I shared in every moment of their struggle, heartbreak, and fleeting moments of dignity, making their journey toward an uncertain California dream feel like my own personal odyssey through America's darkest economic chapter.</p>
+                        </li>
+                    </ul>
+                </div>
+            </a>
+            <a href="Non-Fiction.html" class="nav-button">
+                Non-Fiction
+                <i class="fas fa-arrow-right"></i>
+            </a>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2025 Kai Murakami Morales</p>
+        </footer>
+    </main>
+
+    <script src="../claude-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MNIST Digit Recognition | Projects | Kai Murakami Morales</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../claude-style.css">
+    <style>
+        /* Additional project page specific styles */
+        .project-header {
+            margin-bottom: var(--space-xl);
+        }
+        
+        .project-image {
+            margin: var(--space-xl) 0;
+            text-align: center;
+        }
+        
+        .project-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .neural-network-img {
+            width: 90%;
+            max-width: 800px;
+            height: auto;
+            margin: 0 auto;
+        }
+        
+        .project-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+        }
+        
+        .meta-item i {
+            color: var(--primary);
+        }
+        
+        .project-content {
+            margin-bottom: var(--space-xxl);
+        }
+        
+        .project-content h2 {
+            margin-top: var(--space-xl);
+            margin-bottom: var(--space-md);
+            font-size: 1.85rem;
+            color: var(--primary);
+        }
+        
+        .project-content h3 {
+            margin-top: var(--space-lg);
+            margin-bottom: var(--space-sm);
+            font-size: 1.5rem;
+        }
+        
+        .project-content ul, 
+        .project-content ol {
+            margin-bottom: var(--space-md);
+            padding-left: var(--space-lg);
+        }
+        
+        .project-content li {
+            margin-bottom: var(--space-xs);
+        }
+        
+        .code-block {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: var(--space-md);
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: var(--space-md) 0;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            white-space: pre;
+            tab-size: 4;
+        }
+        
+        body.light-theme .code-block {
+            background-color: rgba(0, 0, 0, 0.05);
+            color: var(--text-dark);
+        }
+        body.light-theme .code-block {
+            background-color: rgba(0, 0, 0, 0.05);
+            color: var(--text-dark);
+        }
+        
+        .graph-explanation {
+            font-style: italic;
+            color: #888;
+            text-align: center;
+            margin-top: var(--space-xs);
+        }
+        
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: var(--space-xxl);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .nav-button {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            padding: var(--space-sm) var(--space-md);
+            border: 1px solid var(--border-dark);
+            border-radius: 4px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        body.light-theme .nav-button {
+            border-color: var(--border-light);
+        }
+        
+        .nav-button:hover {
+            background-color: rgba(218, 119, 86, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .back-to-projects {
+            text-align: center;
+            margin-top: var(--space-xl);
+        }
+
+        .demo-gif {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="logo-home" aria-label="Home">
+        <img src="/assets/umi.png" alt="Home">
+    </a>
+    
+    <div class="theme-toggle">
+        <button aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <main class="content">
+        <div class="conversation">
+            <div class="message-container">
+                <div class="message-header">Project Details</div>
+                <div class="message">
+                    <div class="project-header">
+                        <h1 class="name">MNIST Digit Recognition Neural Network</h1>
+                        <p class="subtitle">A PyTorch neural network for handwritten digit recognition with 98.20% accuracy</p>
+                        
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <i class="far fa-calendar"></i>
+                                <span>Completed: August 2024</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-code-branch"></i>
+                                <span>Version: 1.0</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fab fa-github"></i>
+                                <a href="https://github.com/kaimorales/MNIST-Predictor" target="_blank">GitHub Repository</a>
+                            </div>
+                        </div>
+                        
+                        <div class="tags">
+                            <span>Python</span>
+                            <span>PyTorch</span>
+                            <span>Neural Networks</span>
+                            <span>Computer Vision</span>
+                            <span>Machine Learning</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-image">
+                        <img src="https://github.com/kaimorales/MNIST-Predictor/raw/main/demo.gif" alt="Demo of MNIST digit recognition application" class="demo-gif">
+                        <p class="graph-explanation">Live demo of the digit recognition application</p>
+                    </div>
+                    
+                    <div class="project-content">
+                        <h2>Project Overview</h2>
+                        <p>This project implements a neural network for recognizing handwritten digits using the MNIST dataset. The model achieves 98.20% accuracy on the test set and is deployed in a simple drawing application that allows users to draw digits and see real-time predictions.</p>
+                        
+                        <p>The MNIST dataset is a large collection of handwritten digits that is commonly used for training various image processing systems. It's like the "Hello World" of machine learning - a perfect starting point for exploring neural networks and computer vision.</p>
+                        
+                        <h2>Neural Network Architecture</h2>
+                        <p>I designed a multi-layer neural network with carefully calibrated dropout to prevent overfitting:</p>
+                        
+                        <div class="project-image">
+                            <img src="./assets/NN.png" alt="Neural Network Architecture Visualization" class="neural-network-img">
+                            <p class="graph-explanation">Neural network architecture visualization (each node in the hidden layers represents approximately 20 neurons, while the output layer shows the actual 10 neurons)</p>
+                        </div>
+                        
+                        <p>The actual architecture consists of:</p>
+                        <ul>
+                            <li><strong>Input Layer:</strong> 784 neurons (representing a flattened 28×28 pixel image)</li>
+                            <li><strong>Hidden Layer 1:</strong> 512 neurons with ReLU activation and Dropout rate of 0.3</li>
+                            <li><strong>Hidden Layer 2:</strong> 256 neurons with ReLU activation and Dropout rate of 0.2</li>
+                            <li><strong>Hidden Layer 3:</strong> 128 neurons with ReLU activation and Dropout rate of 0.1</li>
+                            <li><strong>Hidden Layer 4:</strong> 60 neurons with ReLU activation and Dropout rate of 0.05</li>
+                            <li><strong>Output Layer:</strong> 10 neurons (one for each digit from 0-9)</li>
+                        </ul>
+                        
+                        <p>For visualization purposes, I've simplified the representation by dividing the actual neuron count by 20 for the hidden layers, while preserving the actual count of 10 neurons in the output layer.</p>
+                        
+                        <p>The architecture implementation in PyTorch:</p>
+                        
+                        <div class="code-block">
+class NeuralNetwork(nn.Module):
+    def __init__(self):
+        super(NeuralNetwork, self).__init__()
+        # Flatten the 28x28 image to a 784-dimensional vector
+        self.flatten = nn.Flatten()
+        self.linear_stack = nn.Sequential(
+           #input
+            nn.Flatten(),
+            #layer1
+            nn.Linear(28*28, 512),
+            nn.ReLU(),
+            nn.Dropout(0.3),
+            #layer 2
+            nn.Linear(512, 256),
+            nn.ReLU(),
+            nn.Dropout(0.2),
+            #layer 3
+            nn.Linear(256, 128),
+            nn.ReLU(),
+            nn.Dropout(0.1),
+            #layer 4
+            nn.Linear(128, 60),
+            nn.ReLU(),
+            nn.Dropout(0.05),
+            #layer 5
+            nn.Linear(60,10),
+        )
+    
+    def forward(self, x):
+        x = self.flatten(x)
+        return self.linear_stack(x)
+                        </div>
+                        
+                        <h2>Technologies & Libraries</h2>
+                        <p>This project leverages several powerful machine learning technologies:</p>
+                        <ul>
+                            <li><strong>PyTorch:</strong> For creating and training the neural network model</li>
+                            <li><strong>Torchvision:</strong> For accessing the MNIST dataset and transformations</li>
+                            <li><strong>PIL (Python Imaging Library):</strong> For image manipulation in the drawing app</li>
+                            <li><strong>Tkinter:</strong> For creating the interactive GUI application</li>
+                            <li><strong>NumPy:</strong> For efficient numerical computations</li>
+                            <li><strong>Matplotlib:</strong> For visualizing model performance and predictions</li>
+                        </ul>
+                        
+                        <h2>Training Process</h2>
+                        <p>The neural network was trained on the MNIST dataset with the following parameters:</p>
+                        <ul>
+                            <li><strong>Training Epochs:</strong> 10</li>
+                            <li><strong>Batch Size:</strong> 64</li>
+                            <li><strong>Optimizer:</strong> Adam</li>
+                            <li><strong>Learning Rate:</strong> 0.001</li>
+                            <li><strong>Loss Function:</strong> Cross Entropy Loss</li>
+                        </ul>
+                        
+                        <p>The training process involved:</p>
+                        
+                        <div class="code-block">
+def train_model(model, trainloader, epochs=10):
+    # Loss and Optimizer
+    criterion = nn.CrossEntropyLoss()
+    optimizer = optim.Adam(model.parameters(), lr=0.001)
+    
+    # Training loop
+    for epoch in range(epochs):
+        running_loss = 0.0
+        
+        for i, (inputs, labels) in enumerate(trainloader):
+            # Reset gradients
+            optimizer.zero_grad()
+            
+            # Forward pass
+            outputs = model(inputs)
+            loss = criterion(outputs, labels)
+            
+            # Backward pass
+            loss.backward()
+            optimizer.step()
+            
+            # Print statistics
+            running_loss += loss.item()
+            
+            if i % 100 == 99:    # Print every 100 mini-batches
+                print(f'Epoch [{epoch+1}/{epochs}], Step [{i+1}], Loss: {running_loss/100:.4f}')
+                running_loss = 0.0
+                        </div>
+                        
+                        <h2>Interactive User Interface</h2>
+                        <p>One of the most exciting aspects of this project is the interactive drawing application that allows users to test the model. The application is built with Tkinter and provides a simple canvas where users can draw digits and get real-time predictions from the trained model. The drawing application's user interface was developed with assistance from Claude 3.7 Sonnet.</p>
+                        
+                        <p>Key features of the application include:</p>
+                        <ul>
+                            <li>Canvas for drawing digits with the mouse</li>
+                            <li>Real-time prediction of drawn digits</li>
+                            <li>Confidence score for predictions</li>
+                            <li>Clear button to reset the canvas</li>
+                        </ul>
+                        
+                        <div class="code-block">
+def predict(self):
+    # Make sure the model was loaded successfully
+    if not hasattr(self, 'model'):
+        self.result.config(text="No model loaded")
+        return
+    
+    # Create a PIL image from the canvas
+    image = Image.new("L", (280, 280), "black")
+    draw = ImageDraw.Draw(image)
+    
+    # Draw all lines from the canvas onto the PIL image
+    for item in self.canvas.find_all():
+        coords = self.canvas.coords(item)
+        if len(coords) == 4:  # Line has 4 coordinates: x1, y1, x2, y2
+            draw.line(coords, fill="white", width=15)
+    
+    # Resize to MNIST format (28x28 pixels)
+    image = image.resize((28, 28), Image.Resampling.LANCZOS)
+    
+    # Convert to numpy array and normalize to 0-1 range
+    img_array = np.array(image) / 255.0
+    
+    # Convert to PyTorch tensor with correct dimensions [batch, channel, height, width]
+    tensor = torch.tensor(img_array, dtype=torch.float32).unsqueeze(0).unsqueeze(0)
+    
+    try:
+        # Make prediction
+        with torch.no_grad():
+            outputs = self.model(tensor)
+            probabilities = torch.nn.functional.softmax(outputs, dim=1)
+            predicted = torch.argmax(outputs, dim=1).item()
+            confidence = probabilities[0][predicted].item() * 100
+        
+        # Update result label
+        self.result.config(text=f"Prediction: {predicted} ({confidence:.1f}%)")
+    except Exception as e:
+        print(f"Error during prediction: {e}")
+        self.result.config(text="Error making prediction")
+                        </div>
+
+                        <h2>Key Learnings</h2>
+                        <p>Through this project, I gained valuable experience in:</p>
+                        <ul>
+                            <li><strong>Neural Network Design:</strong> Understanding how layer sizes, activation functions, and dropout rates affect model performance</li>
+                            <li><strong>PyTorch Workflows:</strong> Structuring ML projects using the PyTorch framework</li>
+                            <li><strong>Regularization Techniques:</strong> Using dropout to prevent overfitting</li>
+                            <li><strong>Image Processing:</strong> Converting user drawings to the format expected by the model</li>
+                        </ul>
+                        
+                        <h2>Challenges & Solutions</h2>
+                        <p>During this project, I encountered several challenges:</p>
+                        <ul>
+                            <li><strong>Preventing Overfitting:</strong> Initial models achieved near-perfect accuracy on training data but performed poorly on test data. I solved this by implementing a progressive dropout strategy, with higher dropout rates in earlier layers.</li>
+                            <li><strong>Balancing Model Complexity:</strong> Finding the right architecture that was complex enough to learn patterns but simple enough to generalize well required extensive experimentation.</li>
+                            <li><strong>User Interface Design:</strong> Creating a responsive drawing interface that accurately captured user input required careful calibration of line widths and image processing steps.</li>
+                            <li><strong>Model Deployment:</strong> Ensuring the trained model could be loaded correctly in the application required robust error handling and path management.</li>
+                        </ul>
+                        
+                        <h2>Future Improvements</h2>
+                        <p>This project could be extended in several ways:</p>
+                        <ul>
+                            <li>Implementing batch normalization to improve training stability</li>
+                            <li>Exploring convolutional neural networks (CNNs) for improved accuracy</li>
+                            <li>Adding data augmentation to improve model robustness</li>
+                            <li>Creating a web-based version of the application using Flask or Django</li>
+                            <li>Extending the model to recognize more than just digits (letters, symbols, etc.)</li>
+                        </ul>
+                        
+                        <h2>Acknowledgments</h2>
+                        <p>I'd like to acknowledge the following contributions to this project:</p>
+                        <ul>
+                            <li>Claude 3.7 Sonnet AI for assistance in developing the drawing application UI</li>
+                            <li>The PyTorch team for their excellent deep learning framework</li>
+                            <li>The creators of the MNIST dataset for providing a standardized benchmark for image recognition</li>
+                        </ul>
+                        
+                        <h2>Getting Started with This Project</h2>
+                        <p>If you're interested in trying out this project yourself:</p>
+                        
+                        <h3>Prerequisites</h3>
+                        <ul>
+                            <li>Python 3.8+</li>
+                            <li>PyTorch</li>
+                            <li>NumPy</li>
+                            <li>Matplotlib</li>
+                            <li>PIL</li>
+                            <li>Tkinter (usually comes with Python)</li>
+                        </ul>
+                        
+                        <h3>Installation</h3>
+                        <div class="code-block">
+pip install torch torchvision numpy matplotlib pillow
+                        </div>
+                        
+                        <h3>Running the Application</h3>
+                        <div class="code-block">
+python digit_app.py
+                        </div>
+                        <p>Make sure the path to the model is correct for your system!</p>
+                        
+                        <h2>Conclusion</h2>
+                        <p>This MNIST digit recognition project demonstrates the power of neural networks for image recognition tasks. By achieving 98.20% accuracy with a relatively simple architecture, it shows how effective modern deep learning techniques can be, even without the complexity of convolutional networks.</p>
+                        
+                        <p>The interactive drawing application brings the neural network to life, allowing users to experience AI in action as it recognizes their handwritten digits in real-time. This combination of backend ML engineering and frontend user experience design makes for a compelling demonstration of applied machine learning.</p>
+                    </div>
+                    
+                    <div class="navigation-buttons">
+                        <a href="project1.html" class="nav-button">
+                            <i class="fas fa-arrow-left"></i>
+                            Previous Project
+                        </a>
+                        <a href="other-project.html" class="nav-button">
+                            Next Project
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="back-to-projects">
+                        <a href="index.html" class="nav-button">Back to Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2025 Kai Murakami Morales</p>
+        </footer>
+    </main>
+
+    <script src="../claude-script.js"></script>
+</body>
+</html>

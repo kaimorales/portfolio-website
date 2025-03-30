@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommendations | Kai Murakami Morales</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Georgia:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../claude-style.css">
+</head>
+<style>
+    .navigation-buttons {
+          display: flex;
+          justify-content: space-between;
+          margin-top: var(--space-xxl);
+          margin-bottom: var(--space-xl);
+      }
+      
+      .nav-button {
+          display: inline-flex;
+          align-items: center;
+          gap: var(--space-xs);
+          padding: var(--space-sm) var(--space-md);
+          border: 1px solid var(--border-dark);
+          border-radius: 4px;
+          transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+      
+      body.light-theme .nav-button {
+          border-color: var(--border-light);
+      }
+      
+      .nav-button:hover {
+          background-color: rgba(218, 119, 86, 0.1);
+          transform: translateY(-2px);
+      }
+</style>
+<body>
+    <a href="index.html" class="logo-home" aria-label="Home">
+        <img src="assets/umi.png" alt="Home">
+    </a>   
+    <div class="theme-toggle">
+        <button aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <main class="content">
+        <div class="profile">
+            <div class="profile-image">
+                <img src="../assets/pfp.png" alt="Kai Murakami Morales">
+            </div>
+            <h1 class="name">Kai Murakami Morales</h1>
+            <p class="subtitle">Data Science Student</p>
+            <div class="social-links">
+                <a href="https://github.com/kaimorales" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/kaimorales" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://kmurakami.myportfolio.com" aria-label="Photography">
+                    <i class="fas fa-camera"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="conversation">
+            <div class="message-container">
+                <div class="message-header">Non-Fiction Book Recommendations</div>
+                <div class="message">
+                    <ul class="book-list">
+                        <li>
+                            <div class="book-cover">
+                                <img src="assets/grokkingmachinelearning.jpg" alt="Book 1">
+                            </div>
+                            <div class="book-details">
+                                <h3>Grokking Machine Learning</h3>
+                                <p class="author">Luis G. Serrano</p>
+                                <p>"Grokking Machine Learning" is a fantastic resource that demystifies complex machine learning concepts through clear, intuitive explanations and practical examples that require minimal math background. The book's conversational tone and focus on building understanding rather than memorizing formulas makes it an ideal entry point for beginners who might otherwise be intimidated by the technical barriers of the field.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="book-cover">
+                                <img src="/assets/numbers.jpg" alt="Book 2">
+                            </div>
+                            <div class="book-details">
+                                <h3>A Mind for Numebrs</h3>
+                                <p class="author">Barbara Oakley Ph.D</p>
+                                <p>"A Mind for Numbers" brilliantly transforms how we approach learning difficult subjects through Barbara Oakley's accessible explanations of neuroscience-backed study techniques and memory strategies. The book's genius lies in making complex concepts approachable for anyone, regardless of their background, while providing practical tools that readers can immediately apply to overcome learning challenges in mathematics, science, or any field requiring deep concentration.</p>
+                      </li>
+                      <li>
+                        <div class="book-cover">
+                            <img src="/assets/sogood.jpg" alt="Book 3">
+                        </div>
+                        <div class="book-details">
+                            <h3>So Good They Can't Ignore You</h3>
+                            <p class="author">Cal Newport Ph.D</p>
+                            <p>"So Good They Can't Ignore You" captivated me with Cal Newport's compelling argument against following your passion, showing instead how developing rare and valuable skills leads to meaningful work. As one of my favorite authors, Newport consistently delivers practical wisdom across his books—from "Deep Work" to "Digital Minimalism"—always challenging conventional career advice with research-backed insights that have fundamentally shifted how I approach professional development and finding purpose in my work.</p>
+                      </li>
+                    </ul>
+                </div>
+        <a href="Fiction.html" class="nav-button">
+            Fiction
+            <i class="fas fa-arrow-right"></i>
+        </a>
+    </div>
+
+        <footer>
+            <p>© 2025 Kai Murakami Morales</p>
+        </footer>
+    </main>
+
+    <script src="../claude-script.js"></script>
+</body>
+</html>
